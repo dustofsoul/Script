@@ -376,7 +376,7 @@
                             var gift_from = data.data.gift_from;
                             if(gift_num){
                                 helper_gift_count(gift_name,gift_num);
-                                msg("你从直播间【"+short_id+"】抽到了【"+gift_from+"】赠送的礼物： "+gift_name+" X "+gift_num+" !","success",5000);
+                                msg("你从直播间【"+short_id+"】抽到了【"+gift_from+"】赠送的礼物： "+gift_name+" X "+gift_num,"success",5000);
                             }
                         }else{
                             if(steps<=3){
@@ -384,7 +384,7 @@
                                     getSmallTV_notice(roomid,raffleId,short_id,steps+1);
                                 },60000);
                             }else{
-                                msg("获取中奖信息时出错！","caution",5000);
+                                msg("获取中奖信息时出错","caution",5000);
                                 console.log(data);
                             }
                         }
@@ -399,8 +399,8 @@
         }
 
 
-        /********************秋收起义******************************/
-        /*原本是给镰刀活动准备的，没想到每个活动竟然都是同一个API*/
+        /********************活动抽奖******************************/
+        /*所有活动共用同一个API*/
         function getlottery_init(roomid){
             $.ajax({
                     type: "get",
@@ -424,7 +424,7 @@
                             }
                             getlottery_check(room_id,short_id);
                         }else{
-                            msg("在获取房间信息的时候出错！","caution",5000);
+                            msg("在获取房间信息的时候出错","caution",5000);
                         }
                     },
                     complete: function () {
@@ -528,7 +528,7 @@
                             var gift_from = data.data.gift_from;
                             if(gift_num){
                                 helper_gift_count(gift_name,gift_num);
-                                msg("你从直播间【"+short_id+"】抽到了【"+gift_from+"】赠送的礼物： "+gift_name+" X "+gift_num+" !","success",5000);
+                                msg("你从直播间【"+short_id+"】抽到了【"+gift_from+"】赠送的礼物： "+gift_name+" X "+gift_num+,"success",5000);
                             }
                         }else{
                             if(steps<=3){
@@ -536,7 +536,7 @@
                                     getlottery_notice(roomid,raffleId,short_id,steps+1);
                                 },60000);
                             }else{
-                                msg("获取中奖信息时出错！","caution",5000);
+                                msg("获取中奖信息时出错","caution",5000);
                                 console.log(data);
                             }
 
